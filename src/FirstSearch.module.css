@@ -1,0 +1,88 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+  
+  body {  
+  margin-top: 200px;
+  background-color: black;
+  }
+
+.searchContainer{
+  display:flex;
+  justify-content: center;
+  margin: 0 10px;
+  max-width: 60rem;
+ margin: 0 auto;
+}
+
+.searchInput {
+    border:  none;
+    border-radius: 2rem;
+    font-size: 20px;
+    height: 3.5rem;  
+
+    font-family: 'Bree Serif', serif;
+    padding: 0 1.5rem;
+    color: #0c131f;  
+
+    display: flex;
+    flex-grow:1;
+    
+
+}
+
+.searchButton {
+    border:  none;
+    border-radius: 2rem;
+    font-size: 20px;
+    height: 3.5rem;
+    
+    width: 3.5rem;
+    background-color: #8de8fe; 
+    cursor: pointer;
+
+    margin-left: -50px;
+  }
+
+
+.dropdownContainer {
+  display:flex;
+  justify-content: center;
+  margin: 0 10px;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.dropdown {
+    margin-top: 10px;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Bree Serif', serif;
+    
+    flex-grow:1;
+
+}
+
+.dropdownRow{
+    cursor:pointer;
+    padding: 10px 0.5rem;
+    margin: 5px 0px;
+}
+
+.dropdownRowTitle{
+
+  padding: 10px 0.5rem;
+  margin: 5px 0px;
+}
+
+
+.dropdownRow:hover{
+    background-color: rgb(229, 229, 239);
+}
+
+
+
+
+
+

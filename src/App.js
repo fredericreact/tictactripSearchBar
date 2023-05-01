@@ -1,12 +1,18 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { faTreeCity } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
+import styles from './FirstSearch.module.css'
+
 const autocompleteAPI = 'https://api.comparatrip.eu/cities/autocomplete/?q=';
 const popularDepartureAPI = 'https://api.comparatrip.eu/cities/popular/5';
-
 
 function App() {
 const [inputText,setInputText] = useState('')
 const [suggestions, setSuggestions] = useState([])
 const [inputSelected,setInputSelected]=useState(false)
+
+
 
 useEffect(() => {
  
@@ -52,22 +58,25 @@ const onBlurHandler =()=>{
 
   return (
     <div >
-    <div >
+    <div className={styles.searchContainer}>
       <input 
       placeholder='Veuillez saisir une Ville de Départ...'
+      className={styles.searchInput}
       type="Text"
       value={inputText}
       onChange={e=>onChangHandler(e.target.value)}
       onClick={onClickHandler} 
       onBlur={onBlurHandler}
       />
-      <button type="submit"  onClick={()=>onSuggestHandler(inputText)}>Submit</button>
+      <button type="submit" className={styles.searchButton} onClick={()=>onSuggestHandler(inputText)}>
+      <FontAwesomeIcon icon={faMagnifyingGlass} style={{color: "#FFFFFF",}} />
+      </button>
     </div>
-    <div>
-    <div>
-    {suggestions.length>0 && <p>Suggestions :</p>}
+    <div className={styles.dropdownContainer}>
+    <div className={styles.dropdown}>
+    {suggestions.length>0 && <p className={styles.dropdownRowTitle}>Suggestions :</p>}
       {suggestions && suggestions.map((suggestion,i) =>
-      <div key={suggestion.unique_name} onClick={()=>onSuggestHandler(suggestion.local_name)}>{suggestion.local_name}</div>
+      <div key={suggestion.unique_name} className={styles.dropdownRow} onClick={()=>onSuggestHandler(suggestion.local_name)}><FontAwesomeIcon icon={faTreeCity} style={{color: "#34a853",marginRight:"10px"}} />{suggestion.local_name}</div>
       )}
       </div>
       </div>
