@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+  
+  body {  
+  margin-top: 200px;
+  background-color: black;
+  }
+
+
+.swapButton {
+  position:absolute;
+  z-index: 10;
+  top:50%;
+  right:0%;
+  height: 3.5rem; 
+  width:3.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.searchContainer{
+  margin: 0 10px;
+  display:flex;
+justify-content: center;
+  flex-grow: 1;
+  position: relative;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.searchInput {
+    border:  none;
+    border-top-right-radius:0.5rem;
+    border-bottom-right-radius:0.5rem;
+    font-size: 20px;
+    height: 3.5rem;  
+
+    font-family: 'Bree Serif', serif;
+    padding: 0 1.5rem;
+    color: #0c131f;  
+
+    display: flex;
+   flex-grow: 1;
+    margin-top: 2px;
+}
+
+.searchInput:hover{
+  background-color: rgb(229, 229, 239);
+}
+
+.searchContainerLabel {
+  background-color: white;
+  border:  none;
+  border-top-left-radius:0.5rem;
+  border-bottom-left-radius:0.5rem;
+    font-size: 20px;
+    height: 3.5rem;  
+
+    font-family: 'Bree Serif', serif;
+    padding: 0 1.5rem;
+    color: #0c131f;  
+    margin-top: 2px;
+    display: flex;
+align-items: center;
+}
+
+
+
+
+.dropdownContainer {
+  display:flex;
+  justify-content: center;
+  margin: 0 10px;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.dropdown {
+    margin-top: 5px;
+    border-radius: 0.5rem;
+    background-color: white;
+    font-size: 20px;
+    font-family: 'Bree Serif', serif;
+    
+    flex-grow:1;
+
+}
+
+.dropdownRow{
+    cursor:pointer;
+    padding: 10px 0.5rem;
+    margin: 8px 0px;
+}
+
+.dropdownRowTitle{
+
+  padding: 10px 0.5rem;
+  margin: 5px 0px;
+}
+
+
+.dropdownRow:hover{
+    background-color: rgb(229, 229, 239);
+}
+
+
+
+
+
+

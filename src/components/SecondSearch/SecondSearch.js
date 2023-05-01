@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+import styles from './SecondSearch.module.css';
 import { useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTreeCity } from '@fortawesome/free-solid-svg-icons'
+import { faRetweet } from '@fortawesome/free-solid-svg-icons'
 const autocompleteAPI = 'https://api.comparatrip.eu/cities/autocomplete/?q=';
 const popularArrivalAPI= 'https://api.comparatrip.eu/cities/popular/from/';
 const popularDepartureAPI = 'https://api.comparatrip.eu/cities/popular/5';
@@ -144,24 +148,24 @@ const SecondSearch = () => {
     
       return (
         <div>
-     <div >
-      <label >Départ :&nbsp;</label>
+     <div className={styles.searchContainer}>
+      <label className={styles.searchContainerLabel}>Départ :&nbsp;</label>
           <input 
           placeholder='Ville de Départ'
-          
+          className={styles.searchInput}
           type="text"
           value={departureTextName}
           onChange={e=>onChangeHandlerDeparture(e.target.value)}
           onClick={handleDepartureClick} 
           onBlur={onBlurDeparture}
           />
-       <button  onClick={Swapping}></button>
+       <button className={styles.swapButton} onClick={Swapping}><FontAwesomeIcon icon={faRetweet} style={{fontSize:"20px"}}/></button>
     </div>
-    <div >
-    <label >Arrivée : </label>
+    <div className={styles.searchContainer}>
+    <label className={styles.searchContainerLabel}>Arrivée : </label>
           <input
           placeholder="Ville d'Arrivée"
-          
+          className={styles.searchInput}
             type="text"
             onChange={e=>onChangeHandlerArrival(e.target.value)}
             value={arrivalTextName}
@@ -174,19 +178,19 @@ const SecondSearch = () => {
     
        
     
-          <div >
-    <div >
-    {departureSuggestions.length>0 && <p >Suggestions :</p>}
+          <div className={styles.dropdownContainer}>
+    <div className={styles.dropdown}>
+    {departureSuggestions.length>0 && <p className={styles.dropdownRowTitle}>Suggestions :</p>}
           {departureSuggestions && departureSuggestions.map((suggestion,i) =>
-          <div key={suggestion.unique_name}  onClick={()=>onSuggestHandlerDeparture(suggestion.unique_name,suggestion.local_name)}>{suggestion.local_name}</div>
+          <div key={suggestion.unique_name} className={styles.dropdownRow} onClick={()=>onSuggestHandlerDeparture(suggestion.unique_name,suggestion.local_name)}><FontAwesomeIcon icon={faTreeCity} style={{color: "#34a853",marginRight:"10px"}} />{suggestion.local_name}</div>
           )}
           </div>
           </div>
-          <div >
-          <div >
-          {arrivalSuggestions.length>0 && <p >Suggestions :</p>}
+          <div className={styles.dropdownContainer}>
+          <div className={styles.dropdown}>
+          {arrivalSuggestions.length>0 && <p className={styles.dropdownRowTitle}>Suggestions :</p>}
           {arrivalSuggestions && arrivalSuggestions.map((suggestion,i) =>
-          <div key={suggestion.unique_name} onClick={()=>onSuggestHandlerArrival(suggestion.unique_name,suggestion.local_name)} >{suggestion.local_name}</div>
+          <div key={suggestion.unique_name} className={styles.dropdownRow} onClick={()=>onSuggestHandlerArrival(suggestion.unique_name,suggestion.local_name)} ><FontAwesomeIcon icon={faTreeCity} style={{color: "#34a853",marginRight:"10px"}} />{suggestion.local_name}</div>
           )}
     </div>
     
