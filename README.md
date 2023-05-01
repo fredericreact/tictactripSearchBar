@@ -34,7 +34,7 @@ npm install react-router-dom
 
 # 3. Content of this project :
 
-## A Departure/Arrival Search Bar with autocomplete fetching APIs
+### A Departure/Arrival Search Bar with autocomplete fetching APIs
 
 <br/>
 
