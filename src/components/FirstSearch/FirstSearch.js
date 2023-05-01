@@ -75,7 +75,7 @@ const onBlurHandler =()=>{
     <div className={styles.dropdown}>
     {suggestions.length>0 && <p className={styles.dropdownRowTitle}>Suggestions :</p>}
       {suggestions && suggestions.map((suggestion,i) =>
-      <div key={suggestion.unique_name} className={styles.dropdownRow} onClick={()=>onSuggestHandler(suggestion.local_name)}><FontAwesomeIcon icon={faTreeCity} style={{color: "#34a853",marginRight:"10px"}} />{suggestion.local_name}</div>
+      <div key={suggestion.unique_name} className={styles.dropdownRow} onClick={()=>onSuggestHandler(suggestion)}><FontAwesomeIcon icon={faTreeCity} style={{color: "#34a853",marginRight:"10px"}} />{suggestion.local_name}</div>
       )}
       </div>
       </div>
