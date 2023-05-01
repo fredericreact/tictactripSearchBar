@@ -3,16 +3,16 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { faTreeCity } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
 import styles from './FirstSearch.module.css'
-
+import { useNavigate } from 'react-router-dom';
 const autocompleteAPI = 'https://api.comparatrip.eu/cities/autocomplete/?q=';
 const popularDepartureAPI = 'https://api.comparatrip.eu/cities/popular/5';
 
-function App() {
+const FirstSearch = () => {
 const [inputText,setInputText] = useState('')
 const [suggestions, setSuggestions] = useState([])
 const [inputSelected,setInputSelected]=useState(false)
 
-
+let navigate = useNavigate();
 
 useEffect(() => {
  
@@ -46,8 +46,7 @@ const onChangHandler = (inputText) => {
  }
 
  const onSuggestHandler = (suggestion) => {
-  setInputText(suggestion)
-  setInputSelected(false)
+  navigate("/search", {state:{id:1,name:suggestion}});
 }
 
 const onBlurHandler =()=>{
@@ -85,4 +84,4 @@ const onBlurHandler =()=>{
   );
 }
 
-export default App;
+export default FirstSearch;
