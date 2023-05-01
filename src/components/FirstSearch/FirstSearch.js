@@ -4,6 +4,7 @@ import { faTreeCity } from '@fortawesome/free-solid-svg-icons'
 import { useState, useEffect } from 'react';
 import styles from './FirstSearch.module.css'
 import { useNavigate } from 'react-router-dom';
+import Banner from '../Banner/Banner';
 const autocompleteAPI = 'https://api.comparatrip.eu/cities/autocomplete/?q=';
 const popularDepartureAPI = 'https://api.comparatrip.eu/cities/popular/5';
 
@@ -57,6 +58,7 @@ const onBlurHandler =()=>{
 
   return (
     <div >
+    <Banner/>
     <div className={styles.searchContainer}>
       <input 
       placeholder='Veuillez saisir une Ville de Départ...'

@@ -1,0 +1,12 @@
+.banner {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.picture {
+    width:30%;
+    max-width: 13rem;
+    border-radius: 2rem;
+}
+
+
